@@ -1,0 +1,14 @@
+{
+  "name": "node-mvc-boilerplate",
+  "version": "1.0.0",
+  "description": "A Simple Node JS MVC boilerplate application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pradip Chaudhary",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
