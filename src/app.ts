@@ -1,15 +1,11 @@
 import express, { ErrorRequestHandler } from "express";
 import createHttpError from "http-errors";
+import exampleRoute from "./routes/exampleRoutes";
 const app = express();
 const port = 8000;
 
-// root directory
-app.get("/", (req, res) => {
-	res.json({
-		message: "Hello world!",
-	});
-});
-
+// Route directory
+app.use("/", exampleRoute);
 // Middleware
 app.use(() => {
 	throw createHttpError(404, "Route not found !!");

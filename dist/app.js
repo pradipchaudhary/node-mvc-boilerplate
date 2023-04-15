@@ -5,14 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const http_errors_1 = __importDefault(require("http-errors"));
+const exampleRoutes_1 = __importDefault(require("./routes/exampleRoutes"));
 const app = (0, express_1.default)();
 const port = 8000;
-// root directory
-app.get("/", (req, res) => {
-    res.json({
-        message: "Hello world!",
-    });
-});
+// Route directory
+app.use("/", exampleRoutes_1.default);
 // Middleware
 app.use(() => {
     throw (0, http_errors_1.default)(404, "Route not found !!");
