@@ -7,7 +7,7 @@ export const getExample: RequestHandler = (req, res, next) => {
 };
 
 export const getExampleData: RequestHandler = (req, res, next) => {
-	const { id, name }: { id: number; name: string } = req.body;
+	const { id, name }: IExampleData = req.body;
 
 	res.json({ id, name });
 };
