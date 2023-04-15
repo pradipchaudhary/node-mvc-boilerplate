@@ -15,8 +15,18 @@ app.get("/", (req, res) => {
 });
 // Middleware
 app.use(() => {
-    throw (0, http_errors_1.default)(404, "Route not found!!");
+    throw (0, http_errors_1.default)(404, "Route not found !!");
 });
+const errorHandler = (err, req, res, next) => {
+    console.log(err.message, err.statusCode);
+    if (res.headersSent) {
+        return next(err);
+    }
+    res
+        .status(err.statusCode || 500)
+        .json({ message: err.message || "An Unknown Error !" });
+};
+app.use(errorHandler);
 // Server Created for port listening
 app.listen(port, () => {
     console.log(`Server listening on Port ${port}`);
