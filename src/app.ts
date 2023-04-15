@@ -1,6 +1,8 @@
 import express, { ErrorRequestHandler } from "express";
 import createHttpError from "http-errors";
 import exampleRoute from "./routes/exampleRoutes";
+import mongoose from "mongoose";
+import { DB } from "./config";
 const app = express();
 const port = 8000;
 
@@ -24,6 +26,17 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 app.use(errorHandler);
 
 // Server Created for port listening
-app.listen(port, () => {
-	console.log(`Server listening on Port ${port}`);
-});
+
+// Connect to MongoDB
+
+mongoose
+	.connect(DB)
+	.then(() => {
+		console.log("connect to MongoDB");
+		app.listen(port, () => {
+			console.log(`Server listening on Port ${port}`);
+		});
+	})
+	.catch(() => {
+		throw createHttpError(505, "Unable to connect to MongoDB");
+	});
