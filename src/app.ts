@@ -2,12 +2,13 @@ import express, { ErrorRequestHandler } from "express";
 import createHttpError from "http-errors";
 import exampleRoute from "./routes/exampleRoutes";
 import mongoose from "mongoose";
-import { DB } from "./config";
+import { DB, PORT } from "./config";
+import { getExampleData } from "./controllers/exampleControllers";
 const app = express();
-const port = 8000;
-
+app.use(express.json());
 // Route directory
 app.use("/", exampleRoute);
+
 // Middleware
 app.use(() => {
 	throw createHttpError(404, "Route not found !!");
@@ -25,16 +26,13 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 
 app.use(errorHandler);
 
-// Server Created for port listening
-
 // Connect to MongoDB
-
 mongoose
 	.connect(DB)
 	.then(() => {
-		console.log("connect to MongoDB");
-		app.listen(port, () => {
-			console.log(`Server listening on Port ${port}`);
+		console.log("Connect to MongoDB");
+		app.listen(PORT, () => {
+			console.log(`Server listening on PORT ${PORT}`);
 		});
 	})
 	.catch(() => {

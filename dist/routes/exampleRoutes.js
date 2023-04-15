@@ -4,4 +4,5 @@ const express_1 = require("express");
 const exampleControllers_1 = require("../controllers/exampleControllers");
 const router = (0, express_1.Router)();
 router.get("/", exampleControllers_1.getExample);
+router.post("/", exampleControllers_1.getExampleData);
 exports.default = router;

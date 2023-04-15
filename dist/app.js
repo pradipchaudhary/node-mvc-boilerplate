@@ -9,7 +9,7 @@ const exampleRoutes_1 = __importDefault(require("./routes/exampleRoutes"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const config_1 = require("./config");
 const app = (0, express_1.default)();
-const port = 8000;
+app.use(express_1.default.json());
 // Route directory
 app.use("/", exampleRoutes_1.default);
 // Middleware
@@ -26,14 +26,13 @@ const errorHandler = (err, req, res, next) => {
         .json({ message: err.message || "An Unknown Error !" });
 };
 app.use(errorHandler);
-// Server Created for port listening
 // Connect to MongoDB
 mongoose_1.default
     .connect(config_1.DB)
     .then(() => {
-    console.log("connect to MongoDB");
-    app.listen(port, () => {
-        console.log(`Server listening on Port ${port}`);
+    console.log("Connect to MongoDB");
+    app.listen(config_1.PORT, () => {
+        console.log(`Server listening on PORT ${config_1.PORT}`);
     });
 })
     .catch(() => {

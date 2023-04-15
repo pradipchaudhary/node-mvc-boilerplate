@@ -5,3 +5,9 @@ export const getExample: RequestHandler = (req, res, next) => {
 		message: "example controller !",
 	});
 };
+
+export const getExampleData: RequestHandler = (req, res, next) => {
+	const { id, name }: { id: number; name: string } = req.body;
+
+	res.json({ id, name });
+};

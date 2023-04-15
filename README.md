@@ -12,3 +12,4 @@ A Simple Node JS Model View Controller boilerplate application
 -npm run dev
 
 #Mongodb Atlas + Mongoose Setup
+#Create Types / Interface for controllers
