@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"watch": "tsc -w",
 		"start": "node ./dist/app.js",
-		"dev": "nodemon ./dist/app.js"
+		"start2": "nodemon ./dist/app.js",
+		"dev": "npm-run-all --parallel watch start2"
 	},
 	"author": "Pradip Chaudhary",
 	"license": "ISC",
