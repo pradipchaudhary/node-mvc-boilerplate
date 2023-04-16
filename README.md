@@ -13,3 +13,4 @@ A Simple Node JS Model View Controller boilerplate application
 
 #Mongodb Atlas + Mongoose Setup
 #Create Types / Interface for controllers
+#Nodejs Express Typescript Setup
