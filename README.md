@@ -1,4 +1,4 @@
-# node-mvc-boilerplate
+# Node MVC Boilerplate
 
 A Simple Node JS Model View Controller boilerplate application
 
