@@ -1,6 +1,6 @@
 # Node MVC Boilerplate
 
-A Simple Node JS Model View Controller boilerplate application
+A Simple Node.js Model-View-Controller boilerplate application.
 
 ## Overview
 
@@ -8,112 +8,85 @@ This is a simple boilerplate project using the MVC (Model-View-Controller) patte
 
 ## Features
 
--   **MVC Pattern**: Organized project structure following the Model-View-Controller design pattern.
--   **Node.js**: JavaScript runtime for building server-side applications.
--   **Express.js**: Web application framework for Node.js.
--   **MongoDB**: NoSQL database for storing data.
--   **TypeScript**: Superset of JavaScript that adds static typing.
+-   MVC architecture for better organization and scalability.
+-   Built with TypeScript for a type-safe and maintainable codebase.
+-   Express.js for creating robust and flexible routes.
+-   MongoDB with Mongoose for schema-based data modeling.
+-   Environment configuration with `dotenv`.
+-   Clean and maintainable folder structure.
+
+## Directory Structure
+
+```bash
+src/
+│
+├── controllers/    # Contains request handling logic for routes
+├── models/         # Contains Mongoose schemas and models
+├── routes/         # Defines the application's routes
+├── services/       # Contains business logic and data processing
+├── views/          # Contains view templates (if using server-side rendering)
+├── middlewares/    # Custom middleware for the application
+├── config/         # Configuration files and setup (e.g., database connection)
+├── utils/          # Utility functions and helpers
+│
+├── app.ts          # Main application entry point
+└── public/         # Publicly accessible files (e.g., images, static assets)
+```
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+-   [Node.js](https://nodejs.org/)
+-   [MongoDB](https://www.mongodb.com/)
 
 ## Getting Started
-
-### Prerequisites
-
--   [Node.js](https://nodejs.org/) (>= 14.x)
--   [MongoDB](https://www.mongodb.com/) (Local or cloud instance)
--   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-### Installation
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/yourusername/node-mvc-boilerplate.git
     ```
 
-2. Navigate into the project directory:
-
-    ```bash
-    cd your-repo-name
-    ```
-
-3. Install dependencies:
+2. Install dependencies:
 
     ```bash
     npm install
     ```
 
-    or
+3. Create a `.env` file in the root of the project with the following variables:
 
     ```bash
-    yarn install
+    MONGO_URI=mongodb://localhost:27017/yourdbname
+    PORT=3000
     ```
 
-4. Create a `.env` file in the root directory and add your MongoDB connection string:
-
-    ```plaintext
-    MONGODB_URI=mongodb://localhost:27017/your-database-name
-    ```
-
-5. Compile TypeScript and start the server:
+4. Start the development server:
 
     ```bash
-    npm run build
-    npm start
+    npm run dev
     ```
 
-    or
+    The server will be running on `http://localhost:3000`.
 
-    ```bash
-    yarn build
-    yarn start
-    ```
+## Available Scripts
 
-### Directory Structure
+-   `npm run dev`: Starts the server in development mode with hot-reloading.
+-   `npm run build`: Compiles the TypeScript code into JavaScript.
+-   `npm start`: Starts the server in production mode.
 
--   `src/`
-    -   `controllers/` - Contains request handling logic for routes.
-    -   `models/` - Contains Mongoose schemas and models.
-    -   `routes/` - Defines the application's routes.
-    -   `services/` - Contains business logic and data processing.
-    -   `views/` - Contains view templates (if using server-side rendering).
-    -   `middlewares/` - Custom middleware for the application.
-    -   `config/` - Configuration files and setup (e.g., database connection).
-    -   `utils/` - Utility functions and helpers.
-    -   `app.ts` - Main application entry point.
--   `public/` - Publicly accessible files (e.g., images, static assets).
--   `tests/` - Contains test files.
--   `package.json` - Project metadata and dependencies.
--   `tsconfig.json` - TypeScript configuration.
+## Technologies Used
 
-### Scripts
+-   **Node.js**: JavaScript runtime for building server-side applications.
+-   **Express.js**: Fast, unopinionated, minimalist web framework for Node.js.
+-   **TypeScript**: A statically typed superset of JavaScript.
+-   **MongoDB**: NoSQL database for high performance and scalability.
+-   **Mongoose**: MongoDB object modeling for Node.js.
 
--   `npm run build` or `yarn build`: Compiles TypeScript code.
--   `npm start` or `yarn start`: Starts the server in production mode.
--   `npm run dev` or `yarn dev`: Starts the server in development mode with hot-reloading.
+## Contributing
 
-### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-1. Fork the repository.
-2. Create a feature branch:
+## License
 
-    ```bash
-    git checkout -b feature/your-feature
-    ```
-
-3. Commit your changes:
-
-    ```bash
-    git commit -m "Add your message here"
-    ```
-
-4. Push to the branch:
-
-    ```bash
-    git push origin feature/your-feature
-    ```
-
-5. Create a Pull Request.
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
