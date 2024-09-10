@@ -1,8 +1,19 @@
-// src/app.ts
-console.log("Hello, TypeScript with Node.js!");
-console.log("This is the TypeScript Script ");
-function printName() {
-    console.log("Print Name functionhh...");
-}
+import express from "express";
+import { PORT } from "./config/index.js";
+import connectDB from "./config/db.js";
 
-printName();
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+// app.use("/users", userRoutes);
+
+// MongoDB connection
+connectDB();
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
