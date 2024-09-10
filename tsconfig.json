@@ -6,6 +6,7 @@
         "rootDir": "./src", // Root directory of TypeScript source files
         "strict": true, // Enable all strict type-checking options
         "esModuleInterop": true, // Enable interoperability between CommonJS and ESModules
+        "moduleResolution": "node", // Use Node.js module resolution
         "skipLibCheck": true, // Skip type checking of declaration files
         "forceConsistentCasingInFileNames": true // Ensure file names are consistent
     },
