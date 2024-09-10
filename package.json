@@ -4,10 +4,12 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
+        "build": "tsc",
         "watch": "tsc -w",
         "start": "node ./dist/app.js",
-        "start2": "nodemon ./dist/app.js",
-        "dev": "npm-run-all --parallel watch start2"
+        "start:dev": "nodemon ./dist/app.js",
+        "dev": "npm-run-all build --parallel watch start:dev",
+        "clean": "rimraf dist"
     },
     "keywords": [],
     "author": "Pradip Chaudhary",
@@ -22,13 +24,14 @@
         "@typescript-eslint/parser": "^8.5.0",
         "eslint": "^9.10.0",
         "nodemon": "^3.1.4",
-        "npm-run-all": "^4.1.5",
+        "rimraf": "^6.0.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.6.2"
     },
     "dependencies": {
         "dotenv": "^16.4.5",
         "express": "^4.20.0",
-        "mongoose": "^8.6.1"
+        "mongoose": "^8.6.1",
+        "npm-run-all": "^4.1.5"
     }
 }

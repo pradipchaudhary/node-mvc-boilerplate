@@ -1,7 +1,7 @@
 // src/controllers/userController.ts
 
 import { Request, Response } from "express";
-import User from "../models/userModel";
+import User from "../models/userModel.js";
 
 // Controller to handle creating a new user
 export const createUser = async (req: Request, res: Response) => {
