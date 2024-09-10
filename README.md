@@ -71,9 +71,12 @@ Make sure you have the following installed:
 
 ## Available Scripts
 
--   `npm run dev`: Starts the server in development mode with hot-reloading.
--   `npm run build`: Compiles the TypeScript code into JavaScript.
--   `npm start`: Starts the server in production mode.
+-   `npm run build`: Compiles TypeScript into JavaScript.
+-   `npm run watch`: Watches for file changes and automatically compiles TypeScript.
+-   `npm run start`: Starts the application in production mode.
+-   `npm run start:dev`: Starts the application in development mode with hot-reloading using `nodemon`.
+-   `npm run dev`: Runs the development server by compiling TypeScript, watching for changes, and using `nodemon` to restart the app.
+-   `npm run clean`: Cleans the `dist` directory.
 
 ## Technologies Used
 
